@@ -12,9 +12,10 @@ import java.util.List;
 public class PersonRepository {
     @PersistenceContext
     private EntityManager entityManager;
+    private String nativeQuery="select name, surname, age from persons where city=?";
 
     public List<Person> getPersonsByCity(String city) {
-        Query query = entityManager.createNativeQuery("select id, name, surname, age, phone_number from persons where city=?");
+        Query query = entityManager.createNativeQuery(nativeQuery);
         query.setParameter(1, city);
 
         return query.getResultList();
