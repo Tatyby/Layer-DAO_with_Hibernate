@@ -3,7 +3,7 @@ package com.example.dao_with_hibernate.service;
 import com.example.dao_with_hibernate.model.Person;
 import com.example.dao_with_hibernate.repository.PersonRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,11 +14,11 @@ public class PersonService {
 
     PersonRepository personRepository;
     public List<Person> getPersonsByCity(String city) {
-        return personRepository.findByCity(city);
+        return personRepository.findPersonByCity(city);
 
     }
     public List<Person> getPersonsByAge(int age) {
-        return personRepository.findByAgeLessThanOrderByAge(age);
+        return personRepository.fndByAgeLessThanOrderByAge(age, Sort.by(Sort.Direction.ASC, "age"));
 
     }
     public List<Person> getPersonsByNameAndSurname(String name, String surname) {
