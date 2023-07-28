@@ -1,4 +1,4 @@
-package com.example.dao_with_hibernate.Model;
+package com.example.dao_with_hibernate.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

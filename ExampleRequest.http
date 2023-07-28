@@ -1,1 +1,9 @@
 GET http://localhost:8080/persons/by-city?city=Moscow
+
+###
+
+GET http://localhost:8080/persons/by-age?age=41
+
+###
+
+GET http://localhost:8080/persons/by-name-surname?name=Петя&surname=Петров
